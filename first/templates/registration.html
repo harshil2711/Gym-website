@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+
+{% block body %}
+<div class="wrapper bg-white">
+    <div class="h2 text-center">Register</div>
+    <div class="h2 text-center">Yourself</div>
+    <div class="h5 font-weight-bold">Registration</div>
+    <div class="text-muted">Enter your registration details</div>
+    <form method='post' action='/registration'>
+    {% csrf_token %}
+        <div class="d-sm-flex align-items-sm-center justify-content-sm-between pt-1">
+            <div class="form-group"> <label class="text-muted mandatory">Name</label> <input name='name' type="text" required class="form-control"> </div>
+            <div class="form-group"> <label class="text-muted mandatory">Email Address</label> <input name='email' type="email" required class="form-control"> </div>
+        </div>
+        <div class="d-sm-flex align-items-sm-center justify-content-sm-between pt-1">
+            <div class="form-group"> <label class="text-muted">Gender</label> <input name='gender' type="text" required class="form-control"> </div>
+            <div class="form-group"> <label class="text-muted">Age</label> <input name='age' type="text" required class="form-control"> </div>
+        </div>
+        <div class="d-sm-flex align-items-sm-center justify-content-sm-between pt-1">
+            <div class="form-group"> <label class="text-muted mandatory">Phone Number</label> <input name='phone' type="tel" required class="form-control"> </div>
+            <div class="form-group"> <label class="text-muted">City</label> <input name='city' type="text" class="form-control"> </div>
+        </div>
+        <div class="form-group"> <label class="text-muted mandatory">Address</label> <input name='address' type="text" required class="form-control"> </div>
+        
+        <div class="d-flex align-items-center justify-content-sm-end button-section"> <button class="btn btn-primary mx-4" type="submit">Submit</button> </div>
+    </form>
+</div>
+
+{% endblock body %}

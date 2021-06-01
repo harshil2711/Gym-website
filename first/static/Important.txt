@@ -1,0 +1,1 @@
+Add html files path to dictonary of templates in settings.py file.
